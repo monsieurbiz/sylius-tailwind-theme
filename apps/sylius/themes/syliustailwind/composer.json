@@ -1,0 +1,14 @@
+{
+    "name": "monsieurbiz/theme-syliustailwind",
+    "authors": [
+        {
+            "name": "Monsieur Biz",
+            "email": "hello@monsieurbiz.com"
+        }
+    ],
+    "extra": {
+        "sylius-theme": {
+            "title": "SyliusTailwind"
+        }
+    }
+}

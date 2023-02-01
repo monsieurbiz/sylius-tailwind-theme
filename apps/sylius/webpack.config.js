@@ -4,6 +4,7 @@ const Encore = require('@symfony/webpack-encore');
 const syliusBundles = path.resolve(__dirname, 'vendor/sylius/sylius/src/Sylius/Bundle/');
 const uiBundleScripts = path.resolve(syliusBundles, 'UiBundle/Resources/private/js/');
 const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/private/');
+const mainShopAssets = path.resolve(__dirname, 'assets/shop/');
 
 // Shop config
 Encore
@@ -86,4 +87,22 @@ appAdminConfig.resolve.alias['sylius/bundle'] = syliusBundles;
 appAdminConfig.externals = Object.assign({}, appAdminConfig.externals, { window: 'window', document: 'document' });
 appAdminConfig.name = 'app.admin';
 
-module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];
+Encore.reset();
+
+const themeAlias = {
+  'sylius/ui': uiBundleScripts,
+  'sylius/ui-resources': uiBundleResources,
+  'sylius/bundle': syliusBundles,
+  '@mainShopAssets': mainShopAssets,
+};
+
+// Themes config
+const syliustailwindThemeConfig = require('./themes/syliustailwind/webpack.config');
+
+syliustailwindThemeConfig.resolve.alias = themeAlias;
+
+module.exports = [
+  shopConfig,
+  adminConfig,
+  syliustailwindThemeConfig,
+];
