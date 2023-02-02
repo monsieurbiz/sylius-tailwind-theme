@@ -8,7 +8,7 @@ Encore
 
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
-  .enableSassLoader()
+  .enablePostCssLoader()
   .enableSourceMaps(!Encore.isProduction())
   .enableVersioning(Encore.isProduction());
 
