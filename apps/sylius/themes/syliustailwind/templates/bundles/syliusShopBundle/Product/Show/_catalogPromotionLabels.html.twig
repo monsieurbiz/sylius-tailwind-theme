@@ -1,0 +1,12 @@
+<div id="appliedPromotions" data-applied-promotions-locale="{{ sylius.localeCode }}">
+    {% for appliedPromotion in appliedPromotions %}
+        <div>
+            <div class="promotion_label sylius_catalog_promotion">
+                {{ appliedPromotion.label }}
+            </div>
+            <span class="text-accent">
+                {% if appliedPromotion.description and withDescription %}{{ appliedPromotion.description }}{% endif %}
+            </span>
+        </div>
+    {% endfor %}
+</div>

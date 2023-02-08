@@ -1,0 +1,8 @@
+<div class="grid lg:grid-cols-4 items-center lg:grid-rows-1 justify-center gap-4">
+    <div class="lg:col-span-2">
+        {{ render(url('sylius_shop_partial_product_index_latest', {'count': 1, 'template': '@SyliusShop/Homepage/_list.html.twig'})) }}
+    </div>
+    <div class="grid grid-cols-2 gap-2 lg:col-span-2 lg:row-span-0">
+        {{ render(url('sylius_shop_partial_product_index_latest', {'count': 4, 'template': '@SyliusShop/Homepage/_list.html.twig'})) }}
+    </div>
+</div>

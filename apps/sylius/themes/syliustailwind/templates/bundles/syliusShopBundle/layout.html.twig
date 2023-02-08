@@ -26,13 +26,13 @@
 {{ sylius_template_event('sylius.shop.layout.before_body') }}
 <div class="" data-route="{{ app.request.get('_route') }}">
     {% block top %}
-        <div class="flex justify-between gap-8 bg-primary">
+        <div class="topbar">
             <a href="#" class="hover:underline text-white">{{ 'sylius.top_bar'|trans }}</a>
-            <div class="text-white flex flex-col lg:flex-row">{{ sylius_template_event('sylius.shop.layout.topbar') }}</div>
+            <div class="text-white flex justify-between w-full lg:w-fit">{{ sylius_template_event('sylius.shop.layout.topbar') }}</div>
         </div>
     {% endblock %}
 
-    <div class="max-w-screen-lg mr-4 ml-4 lg:m-auto">
+    <div class="px-4 lg:px-72">
         {% block header %}
             <header>
                 {{ sylius_template_event('sylius.shop.layout.header') }}
