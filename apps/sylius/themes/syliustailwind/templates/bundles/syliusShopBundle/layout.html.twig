@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="{{ app.request.locale|slice(0, 2) }}">
+<html lang="{{ app.request.locale|slice(0, 2) }}" data-theme="pastel">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,25 +22,19 @@
     {{ sylius_template_event('sylius.shop.layout.head') }}
 </head>
 
-<body class="pushable">
+<body class="">
 {{ sylius_template_event('sylius.shop.layout.before_body') }}
-<div class="pusher" data-route="{{ app.request.get('_route') }}">
+<div class="" data-route="{{ app.request.get('_route') }}">
     {% block top %}
-        <div id="menu" class="top-menu">
-            <a href="#" class="top-menu__link">{{ 'sylius.top_bar'|trans }}</a>
-            <div class="top-bar">{{ sylius_template_event('sylius.shop.layout.topbar') }}</div>
+        <div class="flex justify-between gap-8 bg-primary">
+            <a href="#" class="hover:underline text-white">{{ 'sylius.top_bar'|trans }}</a>
+            <div class="text-white flex flex-col lg:flex-row">{{ sylius_template_event('sylius.shop.layout.topbar') }}</div>
         </div>
     {% endblock %}
 
-    <div class="ui container">
+    <div class="max-w-screen-lg mr-4 ml-4 lg:m-auto">
         {% block header %}
-            <header> 
-                    <div class="h-screen flex flex-col items-center justify-center">
-                        <h1 class="text-gray-500 text-4xl mb-4">Hello world</h1>
-                        <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
-                            Click here
-                        </button>
-                    </div>
+            <header>
                 {{ sylius_template_event('sylius.shop.layout.header') }}
             </header>
         {% endblock %}

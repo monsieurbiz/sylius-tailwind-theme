@@ -1,0 +1,10 @@
+<div class="flex flex-col items-end lg:flex-row lg:items-center gap-1 lg:gap-2">
+    {% if is_granted('ROLE_USER') %}
+        <div class="" {{ sylius_test_html_attribute('full-name') }}>{{ 'sylius.ui.hello'|trans }} {{ app.user.customer.fullName }}!</div>
+        <a href="{{ path('sylius_shop_account_dashboard') }}" class="link lg:link-hover">{{ 'sylius.ui.my_account'|trans }}</a>
+        <a href="{{ path('sylius_shop_logout') }}" class="link lg:link-hover sylius-logout-button" {{ sylius_test_html_attribute('logout-button') }}>{{ 'sylius.ui.logout'|trans }}</a>
+    {% else %}
+        <a href="{{ path('sylius_shop_login') }}" class="link lg:link-hover">{{ 'sylius.ui.login'|trans }}</a>
+        <a href="{{ path('sylius_shop_register') }}" class="link lg:link-hover">{{ 'sylius.ui.register'|trans }}</a>
+    {% endif %}
+</div>

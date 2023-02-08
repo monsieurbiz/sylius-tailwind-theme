@@ -7,7 +7,11 @@ module.exports = {
     path.join(__dirname, './templates/**/*.html.twig'),
   ],
   theme: {
-    extend: {},
+    extend: {
+      margin: {
+        auto: 'auto',
+      },
+    },
   },
-  plugins: [require("daisyui")],
+  plugins: [require('daisyui')],
 };

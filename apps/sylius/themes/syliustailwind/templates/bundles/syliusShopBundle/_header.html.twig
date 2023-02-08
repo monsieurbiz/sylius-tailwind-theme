@@ -1,0 +1,6 @@
+<div class="flex flex-col mt-4 lg:mt-8">
+    <div class="flex gap-4 lg:gap-0 justify-between mb-4 lg:mb-8">
+        {{ sylius_template_event('sylius.shop.layout.header.grid') }}
+    </div>
+        {{ render(url('sylius_shop_partial_channel_menu_taxon_index', {'template': '@SyliusShop/Taxon/_menu.html.twig'})) }}
+</div>
