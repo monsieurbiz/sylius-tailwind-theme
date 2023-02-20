@@ -93,7 +93,7 @@
 }
 
 .promotion_label {
-    @apply bg-accent rounded-sm w-fit p-2;
+    @apply bg-accent rounded-sm w-fit p-2 whitespace-nowrap;
 }
 
 .footer {
@@ -103,4 +103,40 @@
 .pre-footer {
     min-height: 30rem;
     @apply absolute -top-2 bg-primary rounded-md flex flex-col justify-between lg:justify-evenly lg:flex-row items-center py-8 lg:py-12 w-9/12 lg:min-h-0;
+}
+
+.tabs.menu {
+    flex-direction: row;
+}
+
+.ui.tab {
+    display: none;
+    --tw-border-opacity: 1;
+    --tw-text-opacity: 1;
+}
+
+.ui.tab.active {
+    display: block;
+    height: 100%;
+}
+
+.tab.item {
+    padding-bottom: theme('spacing.8'); 
+} 
+
+.tab-bordered.active {
+    border-color: hsl(var(--af) / var(--tw-border-opacity));
+    --tw-border-opacity: 1;
+    --tw-text-opacity: 1;
+}
+
+.tab-bordered.active {
+    font-weight: bold;
+}
+
+.red.labels .label, .red.label {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--af) / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--a) / var(--tw-text-opacity));
 }
