@@ -1,0 +1,6 @@
+
+<a class="tab tab-bordered active item" data-tab="details">{{ 'sylius.ui.details'|trans }}</a>
+{% if product.attributes|length > 0 %}
+    <a class="tab tab-bordered item" data-tab="attributes" {{ sylius_test_html_attribute('tab', 'attributes') }}>{{ 'sylius.ui.attributes'|trans }}</a>
+{% endif %}
+<a class="tab tab-bordered item" data-tab="reviews">{{ 'sylius.ui.reviews'|trans }} ({{ product.acceptedReviews|length }})</a>
