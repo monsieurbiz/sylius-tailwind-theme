@@ -1,0 +1,22 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% form_theme form '@SyliusShop/Form/theme.html.twig' %}
+
+{% block title %}{{ 'sylius.ui.customer_login'|trans }} | {{ parent() }}{% endblock %}
+
+{% block content %}
+    {% include '@SyliusShop/Login/_header.html.twig' %}
+
+    {{ sylius_template_event('sylius.shop.login.after_content_header') }}
+
+    <div class="mb-14">
+        <div class="grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-none gap-8">
+            <div class="border-solid border-2 rounded p-10">
+                {{ sylius_template_event('sylius.shop.login.main_column', _context) }}
+            </div>
+            <div class="p-10">
+                {{ sylius_template_event('sylius.shop.login.register_column', _context) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
