@@ -1,18 +1,31 @@
 {% extends 'form_div_layout.html.twig' %}
 
 {% block form_row -%}
-    <div class="{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
-        {{- form_label(form) -}}
-        {{- form_widget(form) -}}
-        {{- form_help(form) -}}
+    <div class="{% if required %}required {% endif %}form-field field">
+    {% if (not compound or force_error|default(false)) and not valid %}
+        {% set error_class = ' error' %}
+    {% else %}
+        {% set error_class = false %}
+    {% endif %}
+        {{- form_label(form, null, {'label_attr': {'class': 'form-label'}}) -}}
+        {% set attr = attr|merge({'class': 'form-input' ~ error_class}) %}
+        {{- form_widget(form, {'attr': attr}) -}}
         {{- form_errors(form) -}}
     </div>
+    {% set help = form_help(form)|trim %}
+    {% if help is not empty %}
+        {% if form.vars.help_attr.not_grid is defined and form.vars.help_attr.not_grid %}
+            {{- help|raw -}}
+        {% else %}
+            <div class="form-grid__after form-help mb-8">{{- help|raw -}}</div>
+        {% endif %}
+    {% endif %}
 {%- endblock form_row %}
 
 {%- block form_errors -%}
     {%- if errors|length > 0 -%}
         {%- for error in errors -%}
-            <div class="ui red {% if form.parent is not empty %}pointing {% endif %}label sylius-validation-error" {{ sylius_test_html_attribute('validation-error') }} {% if form.parent is empty %} style="margin-bottom: 10px;"{% endif %}>
+            <div class="text-error {% if form.parent is not empty %}pointing {% endif %}label sylius-validation-error" {{ sylius_test_html_attribute('validation-error') }} {% if form.parent is empty %} style="margin-bottom: 10px;"{% endif %}>
                 {{ error.message }}
             </div>
         {%- endfor -%}
@@ -21,11 +34,11 @@
 
 {% block checkbox_row -%}
     <div class="{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
-        <div class="ui toggle checkbox">
-            {{- form_widget(form) -}}
-            {{- form_label(form) -}}
-            {{- form_errors(form) -}}
+        <div class="form-checkbox">
+            {{- form_widget(form, {'attr': {'class': 'toggle toggle-primary'}}) -}}
+            {{- form_label(form, null, {'label_attr': label_attr}) -}}
         </div>
+        {{- form_errors(form) -}}
     </div>
 {%- endblock checkbox_row %}
 
