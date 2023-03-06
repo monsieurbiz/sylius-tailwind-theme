@@ -1,0 +1,29 @@
+/*
+Address
+-----------------------------------------------------------------------------
+*/
+@layer components {
+
+/*
+Card
+-----------------------------------------------------------------------------
+*/
+
+.address-card-content {
+    @apply relative flex-col gap-4 h-full border border-base-200 shadow-md p-6 rounded-md;
+}
+
+.address-card-content.default {
+    @apply border-accent;
+}
+
+/*
+Label
+-----------------------------------------------------------------------------
+*/
+
+.address-label {
+    @apply absolute top-0 right-0 bg-accent text-white rounded-sm p-2;
+}
+
+}

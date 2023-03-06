@@ -1,0 +1,40 @@
+{% extends '@SyliusShop/Account/AddressBook/layout.html.twig' %}
+
+{% form_theme form '@SyliusShop/Form/theme.html.twig' %}
+
+{% block title %}{{ 'sylius.ui.add_address'|trans }} | {{ parent() }}{% endblock %}
+
+{% block subcontent %}
+    <div class="">
+        <h1 class="text-3xl font-bold mb-12">
+            {{ 'sylius.ui.address_book'|trans }}
+            <div class="text-base text-gray-400 font-normal">{{ 'sylius.ui.add_address'|trans }}</div>
+        </h1>
+
+        {{ sylius_template_event('sylius.shop.account.address_book.create.after_content_header', {'address': address}) }}
+
+        {{ form_start(form, {'action': path('sylius_shop_account_address_book_create'), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
+            {% include '@SyliusShop/Common/Form/_address.html.twig' with {'form': form} %}
+            <div class="flex justify-between mt-8">
+                <a href="{{ path('sylius_shop_account_address_book_index') }}" class="btn btn-outline btn-primary flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M0 0h24v24H0z" stroke="none"/>
+                        <path d="M5 12h14M5 12l6 6M5 12l6-6"/>
+                    </svg>
+                    {{ 'sylius.ui.cancel'|trans }}
+                </a>
+                <button type="submit" class="btn btn-outline btn-primary flex gap-2" {{ sylius_test_html_attribute('add-address') }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M0 0h24v24H0z" stroke="none"/>
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                    {{ 'sylius.ui.add'|trans }}
+                </button>
+            </div>
+
+        {{ sylius_template_event('sylius.shop.account.address_book.create.form', {'address': address}) }}
+
+        {{ form_row(form._token) }}
+        {{ form_end(form, {'render_rest': false}) }}
+    </div>
+{% endblock %}
