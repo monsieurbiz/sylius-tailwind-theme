@@ -12,9 +12,9 @@
 {% endblock %}
 
 {% block subcontent %}
-    <h1 class="text-3xl font-bold">
+    <h1 class="header-account">
         {{ 'sylius.ui.my_account'|trans }}
-        <div class="text-base text-gray-400 font-normal">{{ 'sylius.ui.manage_your_personal_information_and_preferences'|trans }}</div>
+        <div class="subheader-account">{{ 'sylius.ui.manage_your_personal_information_and_preferences'|trans }}</div>
     </h1>
 
     {{ sylius_template_event('sylius.shop.account.dashboard.after_content_header', {'customer': customer}) }}

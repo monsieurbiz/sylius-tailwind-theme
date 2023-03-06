@@ -147,3 +147,11 @@
 .products-list {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
 }
+
+.header-account {
+    @apply text-3xl font-bold mb-12;
+}
+
+.subheader-account {
+    @apply text-base text-gray-400 font-normal;
+}
