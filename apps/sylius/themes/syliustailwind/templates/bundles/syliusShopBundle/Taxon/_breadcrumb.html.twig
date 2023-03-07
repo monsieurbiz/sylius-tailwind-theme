@@ -1,0 +1,15 @@
+{% set ancestors = taxon.ancestors|reverse %}
+
+<div class="text-sm breadcrumbs">
+    <ul>
+        <li class="text-accent-focus"><a href="{{ path('sylius_shop_homepage') }}">{{ 'sylius.ui.home'|trans }}</a></li>
+        {% for ancestor in ancestors %}
+            {% if ancestor.isRoot() or not ancestor.enabled %}
+                <li>{{ ancestor.name }}</li>
+            {% else %}
+                <li><a href="{{ path('sylius_shop_product_index', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}">{{ ancestor.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+        <li>{{ taxon.name }}</li>
+    </ul>
+</div>
