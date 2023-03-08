@@ -1,0 +1,22 @@
+
+@layer utilities {
+
+/*
+Heading
+-----------------------------------------------------------------------------
+*/
+
+.heading-4xl {
+    @apply text-4xl font-bold mb-12;
+}
+
+/*
+Sub heading
+-----------------------------------------------------------------------------
+*/
+
+.sub-heading {
+    @apply text-base text-gray-400 font-normal;
+}
+
+}
