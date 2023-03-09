@@ -158,3 +158,11 @@
 .subheader-account {
     @apply text-base text-gray-400 font-normal;
 }
+
+.label {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--af) / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: hsl(var(--a) / var(--tw-text-opacity));
+    @apply inline-block text-sm font-bold uppercase rounded-full px-3 py-1 leading-normal;
+}
