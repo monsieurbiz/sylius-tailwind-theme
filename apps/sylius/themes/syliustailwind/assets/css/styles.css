@@ -2,8 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "./components/_forms.css";
 @import "./components/_adress.css";
+@import "./components/_forms.css";
+@import "./components/_steps.css";
 
 @import "./utilities/_heading.css";
 
