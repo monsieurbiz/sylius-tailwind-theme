@@ -166,3 +166,11 @@
     color: hsl(var(--a) / var(--tw-text-opacity));
     @apply inline-block text-sm font-bold uppercase rounded-full px-3 py-1 leading-normal;
 }
+
+.content-highlighted {
+    @apply bg-white shadow-md rounded-md p-4 mb-12 border border-gray-200;
+}
+
+.content-highlighted-gray {
+    @apply bg-gray-100 shadow-md rounded-md p-8 border border-gray-200;
+}
