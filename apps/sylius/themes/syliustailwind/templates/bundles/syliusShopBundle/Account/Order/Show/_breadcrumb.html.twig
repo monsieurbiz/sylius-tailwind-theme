@@ -1,0 +1,10 @@
+<div class="text-sm breadcrumbs mb-12">
+    <ul>
+        <li><a href="{{ path('sylius_shop_homepage') }}" class="text-accent">{{ 'sylius.ui.home'|trans }}</a></li>
+        <li><a href="{{ path('sylius_shop_account_dashboard') }}" class="text-accent">{{ 'sylius.ui.my_account'|trans }}</a></li>
+        <li><a href="{{ path('sylius_shop_account_order_index') }}" class="text-accent">{{ 'sylius.ui.order_history'|trans }}</a></li>
+        <li class="active">
+            {{ 'sylius.ui.order'|trans }} <span id="number" {{ sylius_test_html_attribute('order-number') }}>#{{ order.number }}</span>
+        </li>
+    </ul>
+</div>
