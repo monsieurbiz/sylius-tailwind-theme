@@ -1,0 +1,16 @@
+@layer components {
+
+/*
+Hero
+-----------------------------------------------------------------------------
+*/
+
+.hero {
+    @apply items-stretch;
+}
+
+.hero-content {
+    @apply flex-col items-start;
+}
+
+}

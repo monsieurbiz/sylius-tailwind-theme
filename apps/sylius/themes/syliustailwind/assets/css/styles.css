@@ -3,112 +3,23 @@
 @import "tailwindcss/utilities";
 
 @import "./components/_adress.css";
+@import "./components/_card.css";
+@import "./components/_carousel.css";
 @import "./components/_forms.css";
+@import "./components/_footer.css";
+@import "./components/_hero.css";
+@import "./components/_highlight.css";
+@import "./components/_topbar.css";
+@import "./components/_navbar.css";
+@import "./components/_newsletter.css";
 @import "./components/_steps.css";
 
+
 @import "./utilities/_heading.css";
-
-
-.topbar {
-    @apply flex flex-col md:flex-row justify-between items-start lg:items-center gap-8 bg-primary py-4 px-4 lg:px-72;
-}
-
-.navbar {
-    border-top: 1px solid lightgrey;
-}
-
-.hero {
-    place-items: stretch;
-}
-
-.hero-content {
-    @apply flex-col items-start;
-}
-
-.card-body {
-    --padding-card: 1rem;
-    @apply justify-between gap-0 h-4/6;
-}
-
-.card {
-    @apply shadow-xl bg-base-100;
-}
-
-.card > figure > img {
-    width: 100%;
-    object-fit: contain;
-}
-
-.latest-product .card {
-    @apply md:w-2/4 lg:w-1/4;
-}
-
-.slick-arrow {
-    position: absolute;
-    padding-inline: 0;
-}
-
-.homepage .carousel-wrapper {
-    position: relative;
-}
-
-.homepage .carousel-nav .carousel-left,
-.homepage .carousel-nav .carousel-right {
-    position: relative;
-}
-
-@screen lg {
-    .homepage .carousel-nav .carousel-left,
-    .homepage .carousel-nav .carousel-right {
-        position: absolute;
-        top: 50%;
-    }
-}
-
-.homepage .carousel {
-    margin: 0 -1em;
-}
-
-.homepage .carousel-item {
-    padding: 5px .5em;
-    box-sizing: inherit;
-}
-
-.homepage .carousel-item .card {
-    height: 25rem;
-}
-@screen lg {
-    .homepage .carousel-item .card {
-        height: 40rem;
-    }
-}
-
-.newsletter::before {
-    content: "";
-    position: absolute;
-    background-color: hsl(var(--a));
-    width: 100vw;
-    height: 100%;
-    z-index: -1;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.text-white {
-    opacity: 1;
-}
+@import "./utilities/_text.css";
 
 .promotion_label {
     @apply bg-accent rounded-sm w-fit p-2 whitespace-nowrap;
-}
-
-.footer {
-    @apply pb-10 pt-96 lg:pt-32 px-14 lg:px-72 text-base-content bg-primary-content;
-}
-
-.pre-footer {
-    min-height: 30rem;
-    @apply absolute -top-2 bg-primary rounded-md flex flex-col justify-between lg:justify-evenly lg:flex-row items-center py-8 lg:py-12 w-9/12 lg:min-h-0;
 }
 
 .tabs.menu {
@@ -151,14 +62,6 @@
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
 }
 
-.header-account {
-    @apply text-3xl font-bold mb-12;
-}
-
-.subheader-account {
-    @apply text-base text-gray-400 font-normal;
-}
-
 .label {
     --tw-bg-opacity: 1;
     background-color: hsl(var(--af) / var(--tw-bg-opacity));
@@ -167,10 +70,4 @@
     @apply inline-block text-sm font-bold uppercase rounded-full px-3 py-1 leading-normal;
 }
 
-.content-highlighted {
-    @apply bg-white shadow-md rounded-md p-4 mb-12 border border-gray-200;
-}
 
-.content-highlighted-gray {
-    @apply bg-gray-100 shadow-md rounded-md p-8 border border-gray-200;
-}
