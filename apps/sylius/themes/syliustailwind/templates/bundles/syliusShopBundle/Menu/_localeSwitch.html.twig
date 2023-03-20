@@ -1,6 +1,6 @@
 {% if locales|length > 1 %}
     <div class="dropdown lg:dropdown-end dropdown-bottom mr-2" id="sylius-locale-selector" {{ sylius_test_html_attribute('locale-selector') }}>
-        <label tabindex="0" class="btn btn-outline text-white text-xs sylius-active-locale" {{ sylius_test_html_attribute('active-locale') }}>{{ active|sylius_locale_name }}</label>
+        <label tabindex="0" class="btn btn-xs btn-outline text-xs sylius-active-locale" {{ sylius_test_html_attribute('active-locale') }}>{{ active|sylius_locale_name }}</label>
         <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
             {% for code in locales %}
                 {% if code is not same as(active) %}

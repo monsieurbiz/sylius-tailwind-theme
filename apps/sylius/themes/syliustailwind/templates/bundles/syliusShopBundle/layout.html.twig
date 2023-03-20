@@ -27,8 +27,8 @@
 <div class="" data-route="{{ app.request.get('_route') }}">
     {% block top %}
         <div class="topbar">
-            <a href="#" class="hover:underline text-white">{{ 'sylius.top_bar'|trans }}</a>
-            <div class="text-white flex justify-between w-full lg:w-fit">{{ sylius_template_event('sylius.shop.layout.topbar') }}</div>
+            <a href="#" class="hover:underline text-xs font-bold">{{ 'sylius.top_bar'|trans }}</a>
+            <div class="flex flex-wrap justify-between font-bold w-full lg:w-fit">{{ sylius_template_event('sylius.shop.layout.topbar') }}</div>
         </div>
     {% endblock %}
 

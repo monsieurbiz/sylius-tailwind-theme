@@ -6,9 +6,9 @@
 
 {% block subcontent %}
     <div class="">
-        <h1 class="header-account">
+        <h1 class="heading-3xl mb-8">
             {{ 'sylius.ui.address_book'|trans }}
-            <div class="subheader-account">{{ 'sylius.ui.add_address'|trans }}</div>
+            <div class="sub-heading">{{ 'sylius.ui.add_address'|trans }}</div>
         </h1>
 
         {{ sylius_template_event('sylius.shop.account.address_book.create.after_content_header', {'address': address}) }}

@@ -5,6 +5,7 @@
 @import "./components/_adress.css";
 @import "./components/_card.css";
 @import "./components/_carousel.css";
+@import "./components/_comment.css";
 @import "./components/_forms.css";
 @import "./components/_footer.css";
 @import "./components/_hero.css";
@@ -59,7 +60,7 @@
 }
 
 .products-list {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
 }
 
 .label {
@@ -70,4 +71,6 @@
     @apply inline-block text-sm font-bold uppercase rounded-full px-3 py-1 leading-normal;
 }
 
+
+li { display: list-item; }
 

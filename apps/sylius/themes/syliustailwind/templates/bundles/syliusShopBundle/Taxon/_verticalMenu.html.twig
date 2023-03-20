@@ -1,9 +1,14 @@
 {{ sylius_template_event('sylius.shop.product.index.before_vertical_menu', {'taxon': taxon}) }}
 
 <div class="ui fluid vertical menu" {{ sylius_test_html_attribute('vertical-menu') }}>
-    <div class="header item">{{ taxon.name }}</div>
+    <div class="heading-2xl font-bold">{{ taxon.name }}</div>
+    <div class="divider"></div>
     {% for child in taxon.enabledChildren %}
-    <a href="{{ path('sylius_shop_product_index', {'slug': child.slug, '_locale': child.translation.locale}) }}" class="item" {{ sylius_test_html_attribute('vertical-menu-item') }}>{{ child.name }}</a>
+    <ul>
+        <li class="list-disc p-0">
+            <a href="{{ path('sylius_shop_product_index', {'slug': child.slug, '_locale': child.translation.locale}) }}" class="item" {{ sylius_test_html_attribute('vertical-menu-item') }}>{{ child.name }}</a>
+        </li>
+    </ul>
     {% endfor %}
     {% if taxon.parent is not empty and not taxon.parent.isRoot() and taxon.parent.enabled %}
         <a href="{{ path('sylius_shop_product_index', {'slug': taxon.parent.slug, '_locale': taxon.parent.translation.locale}) }}" class="item" {{ sylius_test_html_attribute('vertical-menu-go-level-up') }}>

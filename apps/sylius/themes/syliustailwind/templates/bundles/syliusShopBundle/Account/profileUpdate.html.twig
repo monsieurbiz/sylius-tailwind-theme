@@ -17,9 +17,9 @@
 {% block subcontent %}
     <div class="">
         {{ form_start(form, {'action': path('sylius_shop_account_profile_update'), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
-        <h1 class="header-account">
+        <h1 class="heading-3xl mb-8">
             {{ 'sylius.ui.your_profile'|trans }}
-            <div class="subheader-account">{{ 'sylius.ui.edit_your_personal_information'|trans }}</div>
+            <div class="sub-heading">{{ 'sylius.ui.edit_your_personal_information'|trans }}</div>
         </h1>
 
         {{ sylius_template_event('sylius.shop.account.profile.update.after_content_header', {'customer': customer, 'form': form}) }}

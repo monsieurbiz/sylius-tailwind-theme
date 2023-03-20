@@ -8,7 +8,7 @@
         {% set error_class = false %}
     {% endif %}
         {{- form_label(form, null, {'label_attr': {'class': 'form-label'}}) -}}
-        {% set attr = attr|merge({'class': 'form-input' ~ error_class}) %}
+        {% set attr = attr|merge({'class': 'form-input mb-4' ~ error_class}) %}
         {{- form_widget(form, {'attr': attr}) -}}
         {{- form_errors(form) -}}
     </div>
@@ -60,9 +60,9 @@
 {%- endblock money_widget %}
 
 {% block choice_row -%}
-    <div class="{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
-        <div class="font-bold">{{- form_label(form) -}}</div>
-        {% set attr = attr|merge({'class': attr.class|default ~ 'dropdown'}) %}
+    <div class="dropdown{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        <div class="font-bold mb-4">{{- form_label(form) -}}</div>
+        {% set attr = attr|merge({'class': attr.class|default ~ 'dropdown-content menu p-2 mb-4 shadow bg-base-100 border border-primary rounded-box w-full'}) %}
         {{- form_widget(form, {'attr': attr}) -}}
         {{- form_errors(form) -}}
     </div>

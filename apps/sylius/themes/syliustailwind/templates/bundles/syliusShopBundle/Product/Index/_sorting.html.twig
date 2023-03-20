@@ -29,13 +29,12 @@
     {% set current_sorting_label = 'sylius.ui.most_expensive_first'|trans|lower %}
 {% endif %}
 
-<div class="float-right small bold">
+<div class="float-right small bold dropdown">
     <div class="content">
         {{ 'sylius.ui.sort'|trans }}
-        <div class="ui inline dropdown">
-            <div class="text">{{ current_sorting_label }}</div>
-            <i class="dropdown icon"></i>
-            <div class="menu">
+        <div class="ui inline ">
+            <div tabindex="0" class="btn btn-outline btn-secondary btn-xs m-1">{{ current_sorting_label }}</div>
+            <div tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                 <a class="item" href="{{ default_path }}" data-text="{{ 'sylius.ui.by_position'|trans|lower }}">{{ 'sylius.ui.by_position'|trans }}</a>
                 <a class="item" href="{{ from_a_to_z_path }}" data-text="{{ 'sylius.ui.from_a_to_z'|trans|lower }}">{{ 'sylius.ui.from_a_to_z'|trans }}</a>
                 <a class="item" href="{{ from_z_to_a_path }}" data-text="{{ 'sylius.ui.from_z_to_a'|trans|lower }}">{{ 'sylius.ui.from_z_to_a'|trans }}</a>
