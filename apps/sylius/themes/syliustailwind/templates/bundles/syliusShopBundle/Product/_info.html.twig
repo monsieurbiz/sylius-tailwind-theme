@@ -1,6 +1,6 @@
 {% set product = variant.product %}
 
-<div class="text-lg font-bold">
+<div class="text-lg font-bold flex flex-col lg:flex-row gap-2">
     {% if variant.hasImages %}
         {% include '@SyliusShop/Product/_mainImage.html.twig' with {'product': variant, 'filter': 'sylius_shop_product_tiny_thumbnail'} %}
     {% else %}
@@ -8,8 +8,8 @@
     {% endif %}
     <div class="content">
         <a href="{{ path('sylius_shop_product_show', {'slug': product.slug}) }}">
-            <div class="sylius-product-name" {{ sylius_test_html_attribute('product-name', item.productName) }}>{{ item.productName }}</div>
-            <span class="sub header sylius-product-variant-code" {{ sylius_test_html_attribute('product-variant-code', variant.code) }}>
+            <div class="sylius-product-name text-sm" {{ sylius_test_html_attribute('product-name', item.productName) }}>{{ item.productName }}</div>
+            <span class="sub-heading !text-xs sylius-product-variant-code" {{ sylius_test_html_attribute('product-variant-code', variant.code) }}>
                 {{ variant.code }}
             </span>
         </a>

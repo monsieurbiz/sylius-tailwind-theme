@@ -10,8 +10,8 @@
 
         {% if taxon.enabledChildren|length > 0 %}
             <li tabindex="0" class="lg:flex" {{ sylius_test_html_attribute('menu-item') }}>
-                <span class="">{{ taxon.name }}</span>
-                <ul class="">
+                <span>{{ taxon.name }}</span>
+                <ul class="z-50">
                     {% for childTaxon in taxon.enabledChildren %}
                         {{ macros.item(childTaxon) }}
                     {% endfor %}

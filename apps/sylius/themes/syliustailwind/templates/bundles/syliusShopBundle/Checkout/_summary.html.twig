@@ -4,7 +4,7 @@
 {% set taxIncluded = order.getTaxIncludedTotal() %}
 {% set taxExcluded = order.getTaxExcludedTotal() %}
 
-<div class="ui segment">
+<div class="mb-4">
     <table class="ui very basic table" id="sylius-checkout-subtotal" {{ sylius_test_html_attribute('checkout-subtotal') }}>
         <thead>
         <tr>
@@ -16,7 +16,7 @@
         <tbody>
         {% for item in order.items %}
             <tr>
-                <td>{{ item.getVariant.product.name }}</td>
+                <td class="text-xs">{{ item.getVariant.product.name }}</td>
                 <td class="center aligned" {{ sylius_test_html_attribute('item-subtotal-quantity', item.variant.product.name) }}>
                     {{ item.quantity }}
                 </td>

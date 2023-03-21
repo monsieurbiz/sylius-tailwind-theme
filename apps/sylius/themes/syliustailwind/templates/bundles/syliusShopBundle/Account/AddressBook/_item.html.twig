@@ -1,0 +1,18 @@
+{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+
+<div class="address-card">
+    <div class="address-card-content" {{ sylius_test_html_attribute('address', "%s %s"|format(address.firstName, address.lastName)) }}>
+        <div>
+            {% include '@SyliusShop/Common/_address.html.twig' with {'address': address} %}
+        </div>
+        <div class="mt-2">
+            <div {{ sylius_test_html_attribute('edit-button') }} class="btn btn-sm btn-outline btn-primary">
+                {{ buttons.edit(path('sylius_shop_account_address_book_update', {'id': address.id})) }}
+            </div>
+            <div class="btn btn-sm btn-outline btn-primary">{{ render(path('sylius_shop_account_address_book_set_as_default', {'id': address.id})) }}</div>
+            <div {{ sylius_test_html_attribute('delete-button') }} class="btn btn-sm btn-outline btn-primary">
+                {{ buttons.delete(path('sylius_shop_account_address_book_delete', {'id': address.id}), null, true, address.id) }}
+            </div>
+        </div>
+    </div>
+</div>

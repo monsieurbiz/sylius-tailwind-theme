@@ -4,7 +4,10 @@
 
 @import "./components/_adress.css";
 @import "./components/_card.css";
+@import "./components/_cart.css";
 @import "./components/_carousel.css";
+@import "./components/_checkbox.css";
+@import "./components/_checkout.css";
 @import "./components/_comment.css";
 @import "./components/_forms.css";
 @import "./components/_footer.css";
@@ -19,6 +22,9 @@
 @import "./utilities/_heading.css";
 @import "./utilities/_text.css";
 
+.hidden {
+    display: none;
+}
 .promotion_label {
     @apply bg-accent rounded-sm w-fit p-2 whitespace-nowrap;
 }
@@ -74,3 +80,14 @@
 
 li { display: list-item; }
 
+.sylius-grid-table-wrapper {
+    @apply overflow-x-scroll;
+}
+
+input {
+    @apply leading-none;
+}
+
+table img {
+    @apply w-20;
+}

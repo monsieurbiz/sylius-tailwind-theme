@@ -18,7 +18,7 @@
     {% set steps_count = 'three' %}
 {% endif %}
 
-<div class="{{ steps_count }} steps w-full">
+<div class="{{ steps_count }} steps steps-vertical md:steps-horizontal w-full">
     <a class="{{ steps['address'] }} step" href="{{ path('sylius_shop_checkout_address') }}" {{ sylius_test_html_attribute('step-address') }}>
         <div class="">
             <div class="step-title">{{ 'sylius.ui.address'|trans }}</div>

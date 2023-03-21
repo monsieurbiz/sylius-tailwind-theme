@@ -9,7 +9,7 @@ Steps
 */
 
 .steps {
-    @apply bg-base-200 py-8;
+    @apply bg-base-200 py-8 justify-items-center md:justify-items-stretch;
 }
 
 /*

@@ -4,16 +4,20 @@
     <div class="heading-2xl font-bold">{{ taxon.name }}</div>
     <div class="divider"></div>
     {% for child in taxon.enabledChildren %}
-    <ul>
+    <ul class="mx-8">
         <li class="list-disc p-0">
             <a href="{{ path('sylius_shop_product_index', {'slug': child.slug, '_locale': child.translation.locale}) }}" class="item" {{ sylius_test_html_attribute('vertical-menu-item') }}>{{ child.name }}</a>
         </li>
     </ul>
     {% endfor %}
     {% if taxon.parent is not empty and not taxon.parent.isRoot() and taxon.parent.enabled %}
-        <a href="{{ path('sylius_shop_product_index', {'slug': taxon.parent.slug, '_locale': taxon.parent.translation.locale}) }}" class="item" {{ sylius_test_html_attribute('vertical-menu-go-level-up') }}>
-            <i class="up arrow icon"></i> {{ 'sylius.ui.go_level_up'|trans }}
-        </a>
+    <ul class="mx-8">
+        <li class="list-disc p-0">
+            <a href="{{ path('sylius_shop_product_index', {'slug': taxon.parent.slug, '_locale': taxon.parent.translation.locale}) }}" class="item" {{ sylius_test_html_attribute('vertical-menu-go-level-up') }}>
+                <i class="up arrow icon"></i> {{ 'sylius.ui.go_level_up'|trans }}
+            </a>
+        </li>
+    </ul>
     {% endif %}
 </div>
 

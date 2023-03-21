@@ -7,7 +7,7 @@
 
     {{ sylius_template_event('sylius.shop.cart.summary.items', {'cart': cart, 'form': form}) }}
 
-    <table id="sylius-cart-items" {{ sylius_test_html_attribute('cart-items') }} class="ui very basic celled table">
+    <table id="sylius-cart-items" {{ sylius_test_html_attribute('cart-items') }} class="cart-table">
         <thead>
         <tr>
             <th>{{ 'sylius.ui.item'|trans }}</th>

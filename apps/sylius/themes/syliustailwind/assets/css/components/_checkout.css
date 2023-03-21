@@ -1,16 +1,9 @@
 @layer components {
-
 /*
-Hero
+checkout
 -----------------------------------------------------------------------------
 */
-
-.hero {
-    @apply items-stretch;
-}
-
-.hero-content {
-    @apply flex-col items-start w-full;
-}
-
+    .checkout-grid {
+        flex: 2;
+    }
 }

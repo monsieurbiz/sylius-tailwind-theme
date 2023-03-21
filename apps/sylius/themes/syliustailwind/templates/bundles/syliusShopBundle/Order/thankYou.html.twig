@@ -3,7 +3,6 @@
 {% block title %}{{ 'sylius.ui.thank_you'|trans }} | {{ parent() }}{% endblock %}
 
 {% block content %}
-    <div class="ui hidden divider"></div>
     <div class="ui grid">
         <div class="flex flex-col items-center">
                 {% set lastPayment = order.payments.last() %}
@@ -13,7 +12,7 @@
                     <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
                     <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
                 </svg>                
-                <div class="mb-8" id="sylius-thank-you" {{ sylius_test_html_attribute('thank-you') }}>
+                <div class="mb-8 text-center" id="sylius-thank-you" {{ sylius_test_html_attribute('thank-you') }}>
                     <div class="heading-4xl mb-12">{{ 'sylius.ui.thank_you'|trans }}<div>
                     <div class="sub-heading">{{ 'sylius.ui.placed_an_order'|trans }}</div>
                 </div>

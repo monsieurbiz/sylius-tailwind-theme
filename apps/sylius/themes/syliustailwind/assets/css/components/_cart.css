@@ -1,0 +1,29 @@
+@layer components {
+
+/*
+Cart
+-----------------------------------------------------------------------------
+*/
+
+
+/*
+Cart table
+-----------------------------------------------------------------------------
+*/
+
+.cart-table {
+    @apply w-full border border-gray-200 rounded-md text-left;
+}
+
+.cart-table th {
+    @apply text-sm text-left font-bold uppercase px-4 py-3 bg-gray-100 border-b border-gray-200;
+}
+
+.cart-table img {
+    @apply w-20;
+}
+
+.cart__summary {
+    flex: 2;
+}
+}
