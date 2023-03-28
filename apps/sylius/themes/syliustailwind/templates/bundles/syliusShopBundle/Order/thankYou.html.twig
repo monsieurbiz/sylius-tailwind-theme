@@ -3,6 +3,7 @@
 {% block title %}{{ 'sylius.ui.thank_you'|trans }} | {{ parent() }}{% endblock %}
 
 {% block content %}
+    <div class="divider mt-0"></div>
     <div class="ui grid">
         <div class="flex flex-col items-center">
                 {% set lastPayment = order.payments.last() %}
