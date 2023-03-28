@@ -1,8 +1,8 @@
 {% import '@SyliusShop/Common/Macro/money.html.twig' as money %}
 
 <div class="item flex w-full gap-2" {{ sylius_test_html_attribute('shipping-item') }}>
-    <div class="field self-center relative">
-        <div class="radio checkbox" {{ sylius_test_html_attribute('shipping-method-checkbox') }}>
+    <div class="field self-center">
+        <div class="ui radio checkbox" {{ sylius_test_html_attribute('shipping-method-checkbox') }}>
             {{ form_widget(form, sylius_test_form_attribute('shipping-method-select')) }}
         </div>
     </div>

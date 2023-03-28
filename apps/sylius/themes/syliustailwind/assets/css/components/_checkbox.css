@@ -5,6 +5,9 @@ Checkbox
 -----------------------------------------------------------------------------
 */
 
+.radio {
+    border: none;
+}
 
 .checkbox input[type="radio"] {
     cursor: pointer;
@@ -22,7 +25,7 @@ Checkbox
     cursor: pointer;
 }
 
-.ui.radio.checkbox label:before {
+.radio.checkbox label:before {
     content: '';
     position: relative;
     display: block;
@@ -40,7 +43,7 @@ Checkbox
 .radio.checkbox label:after {
     position: relative;
     display: block;
-    top: 1px;
+    top: -15px;
     left: 0px;
     width: 15px;
     height: 15px;
@@ -49,7 +52,7 @@ Checkbox
 }
 
 .radio.checkbox input:checked ~ label:after {
-    background-color: rgba(0, 0, 0, 0.95);
+    @apply bg-primary;
 }
 
 
