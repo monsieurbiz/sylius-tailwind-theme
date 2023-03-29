@@ -1,0 +1,52 @@
+@layer components {
+
+/*
+Responsive table
+-----------------------------------------------------------------------------
+*/
+    table img {
+        @apply w-20;
+    }
+    
+    .responsive-table {
+        @apply text-center border border-gray-200 rounded-md w-full;
+        margin: 1rem auto;
+    }
+
+    .responsive-table th,td{
+        padding:8px 0
+    }
+
+    .responsive-table th {
+        @apply text-sm text-left font-bold uppercase px-4 py-3 bg-gray-100 border-b border-gray-200;
+    }
+
+    @media (max-width: 800px) {
+
+        .responsive-table table, 
+        .responsive-table thead, 
+        .responsive-table tbody, 
+        .responsive-table th, 
+        .responsive-table td, 
+        .responsive-table tr{ 
+            @apply block;
+        }
+
+        .responsive-table thead tr { 
+            @apply absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        .responsive-table td { 
+            @apply relative text-left whitespace-normal;
+            padding-left: 50%; 
+        }
+
+        .responsive-table td:before { 
+            @apply absolute top-1.5 left-1.5 w-6/12 pr-2.5 font-bold whitespace-nowrap text-left;
+            content: attr(data-title)
+        }
+    }
+
+}

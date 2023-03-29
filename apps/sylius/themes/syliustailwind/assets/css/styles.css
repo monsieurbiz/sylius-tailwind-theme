@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import "./components/_adress.css";
+@import "./components/_address.css";
 @import "./components/_card.css";
 @import "./components/_cart.css";
 @import "./components/_carousel.css";
@@ -16,78 +16,28 @@
 @import "./components/_topbar.css";
 @import "./components/_navbar.css";
 @import "./components/_newsletter.css";
+@import "./components/_product.css";
 @import "./components/_steps.css";
+@import "./components/_table.css";
+@import "./components/_tabs.css";
 
 
 @import "./utilities/_heading.css";
 @import "./utilities/_text.css";
-
-.hidden {
-    display: none;
-}
-.promotion_label {
-    @apply bg-accent rounded-sm w-fit p-2 whitespace-nowrap;
-}
-
-.tabs.menu {
-    flex-direction: row;
-}
-
-.ui.tab {
-    display: none;
-    --tw-border-opacity: 1;
-    --tw-text-opacity: 1;
-}
-
-.ui.tab.active {
-    display: block;
-    height: 100%;
-}
-
-.tab.item {
-    padding-bottom: theme('spacing.8'); 
-} 
-
-.tab-bordered.active {
-    border-color: hsl(var(--af) / var(--tw-border-opacity));
-    --tw-border-opacity: 1;
-    --tw-text-opacity: 1;
-}
-
-.tab-bordered.active {
-    font-weight: bold;
-}
-
-.red.labels .label, .red.label {
-    --tw-bg-opacity: 1;
-    background-color: hsl(var(--af) / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: hsl(var(--a) / var(--tw-text-opacity));
-}
-
-.products-list {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
-}
-
-.label {
-    --tw-bg-opacity: 1;
-    background-color: hsl(var(--af) / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: hsl(var(--a) / var(--tw-text-opacity));
-    @apply inline-block text-sm font-bold uppercase rounded-full px-3 py-1 leading-normal;
-}
-
-
-li { display: list-item; }
+@import "./utilities/_label.css";
 
 .sylius-grid-table-wrapper {
     @apply overflow-x-scroll;
 }
 
-input {
-    @apply leading-none;
+li { 
+    display: list-item; 
 }
 
-table img {
+table img{
     @apply w-20;
+}
+
+input {
+    @apply leading-none;
 }

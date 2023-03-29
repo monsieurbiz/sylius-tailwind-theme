@@ -1,0 +1,41 @@
+@layer components {
+
+/*
+Tabs
+-----------------------------------------------------------------------------
+*/
+
+.tabs.menu {
+    @apply flex-row;
+}
+
+/*
+Tab
+-----------------------------------------------------------------------------
+*/
+
+.ui.tab {
+    @apply hidden;
+    --tw-border-opacity: 1;
+    --tw-text-opacity: 1;
+}
+
+.ui.tab.active {
+    @apply block h-full;
+}
+
+.tab.item {
+    padding-bottom: theme('spacing.8'); 
+} 
+
+.tab-bordered.active {
+    border-color: hsl(var(--af) / var(--tw-border-opacity));
+    --tw-border-opacity: 1;
+    --tw-text-opacity: 1;
+}
+
+.tab-bordered.active {
+    @apply font-bold;
+}
+
+}

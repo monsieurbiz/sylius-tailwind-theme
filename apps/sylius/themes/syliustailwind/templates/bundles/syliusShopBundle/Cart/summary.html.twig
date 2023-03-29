@@ -12,7 +12,7 @@
     {% if not cart.empty %}
         {{ sylius_template_event('sylius.shop.cart.header', {'header': header, 'cart': cart}) }}
         <div class="flex flex-col gap-4 lg:flex-row lg:flex-wrap ">
-            <div class="cart__summary">
+            <div class="checkout-grid">
                 {{ sylius_template_event('sylius.shop.cart.items', {'cart': cart, 'form': form}) }}
             </div>
             <div>

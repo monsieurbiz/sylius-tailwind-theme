@@ -5,7 +5,7 @@
 {% set taxExcluded = order.getTaxExcludedTotal() %}
 
 <div class="mb-4">
-    <table class="ui very basic table" id="sylius-checkout-subtotal" {{ sylius_test_html_attribute('checkout-subtotal') }}>
+    <table class="ui very basic table responsive-table" id="sylius-checkout-subtotal" {{ sylius_test_html_attribute('checkout-subtotal') }}>
         <thead>
         <tr>
             <th class="sylius-table-column-item">{{ 'sylius.ui.item'|trans }}</th>
