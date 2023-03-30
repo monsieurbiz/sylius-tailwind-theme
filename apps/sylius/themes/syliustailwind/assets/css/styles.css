@@ -4,7 +4,6 @@
 
 @import "./components/_address.css";
 @import "./components/_card.css";
-@import "./components/_cart.css";
 @import "./components/_carousel.css";
 @import "./components/_checkbox.css";
 @import "./components/_checkout.css";
@@ -19,7 +18,7 @@
 @import "./components/_product.css";
 @import "./components/_steps.css";
 @import "./components/_table.css";
-@import "./components/_tabs.css";
+@import "./components/_tab.css";
 
 
 @import "./utilities/_heading.css";
@@ -32,10 +31,6 @@
 
 li { 
     display: list-item; 
-}
-
-table img{
-    @apply w-20;
 }
 
 input {

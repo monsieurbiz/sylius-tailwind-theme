@@ -2,9 +2,12 @@
 
 <div class="divider"></div>
 <div class="flex flex-wrap justify-between mb-4">
-    <div class="">
-        {{ headers.default(header|trans, 'cart', 'sylius.ui.edit_your_items_apply_coupon_or_proceed_to_the_checkout'|trans) }}
-    </div>
+    <h1 class="heading-3xl">
+        {{ 'sylius.ui.cart'|trans }}
+        <div class="sub-heading">
+            {{ 'sylius.ui.edit_your_items_apply_coupon_or_proceed_to_the_checkout'|trans }}
+        </div>
+    </h1>
     <div class="">
         <form method="post" action="{{ path('sylius_shop_cart_clear') }}" >
             <input type="hidden" name="_method" value="DELETE" />
