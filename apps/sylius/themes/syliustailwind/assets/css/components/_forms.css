@@ -38,4 +38,13 @@ Label
     @apply flex gap-4;
 }
 
+/*
+Required
+-----------------------------------------------------------------------------
+*/
+.form-label.required:after,
+.form-select.required:after {
+        @apply content-['*'] text-red-500;
+}
+
 }
