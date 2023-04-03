@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 
 @import "./components/_address.css";
+@import "./components/_alert.css";
 @import "./components/_card.css";
 @import "./components/_carousel.css";
 @import "./components/_checkbox.css";
