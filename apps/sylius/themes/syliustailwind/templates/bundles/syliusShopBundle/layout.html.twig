@@ -53,20 +53,7 @@
         {% include '@SyliusShop/_footer.html.twig' %}
     {% endblock %}
 </div>
-
-<script>
-const selectTheme = document.getElementById('theme-select');
-
-selectTheme.addEventListener('change', (e) => {
-    const theme = e.target.value;
-    localStorage.setItem('theme', theme);
-    document.querySelector('html').setAttribute('data-theme', localStorage.getItem('theme'));
-});
-
-if (localStorage.getItem('theme') !== null) {
-    document.querySelector('html').setAttribute('data-theme', localStorage.getItem('theme'));
-}
-</script>
+    {% include '@SyliusShop/_themeSelector.html.twig' %}
 
 {% block javascripts %}
     {{ sylius_template_event('sylius.shop.layout.javascripts') }}
