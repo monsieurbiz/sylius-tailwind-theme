@@ -1,0 +1,8 @@
+{% import "@SyliusShop/Common/Macro/money.html.twig" as money %}
+
+<div id="sylius-cart-button" class="btn btn-md btn-outline btn-primary" tabindex="0"{{ sylius_test_html_attribute('cart-button') }}>
+    {{ sylius_template_event('sylius.shop.cart.widget.button', {'cart': cart}) }}
+</div>
+<div class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52" tabindex="0">
+    {{ sylius_template_event('sylius.shop.cart.widget.popup', {'cart': cart}) }}
+</div>

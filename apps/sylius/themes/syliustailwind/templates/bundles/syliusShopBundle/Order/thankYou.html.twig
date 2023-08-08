@@ -1,0 +1,44 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block title %}{{ 'sylius.ui.thank_you'|trans }} | {{ parent() }}{% endblock %}
+
+{% block content %}
+    <div class="divider mt-0"></div>
+    <div class="ui grid">
+        <div class="flex flex-col items-center">
+                {% set lastPayment = order.payments.last() %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"></path>
+                    <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                    <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                </svg>                
+                <div class="mb-8 text-center" id="sylius-thank-you" {{ sylius_test_html_attribute('thank-you') }}>
+                    <div class="heading-4xl mb-12">{{ 'sylius.ui.thank_you'|trans }}<div>
+                    <div class="sub-heading">{{ 'sylius.ui.placed_an_order'|trans }}</div>
+                </div>
+            
+
+            {{ sylius_template_event('sylius.shop.order.thank_you.after_message', {'order': order}) }}
+
+            {% if lastPayment != false %}
+                {%  if lastPayment.method.instructions is not null %}
+                    <div id="sylius-payment-method-instructions" class="ui segment" {{ sylius_test_html_attribute('payment-method-instructions') }}>
+                        {{ lastPayment.method.instructions }}
+                    </div>
+                {% endif %}
+                <div class="ui hidden divider"></div>
+            {% endif %}
+
+            {% if order.customer.user is not null %}
+                <a href="{{ path('sylius_shop_account_order_show', {'number': order.number}) }}" id="sylius-show-order-in-account" class="btn btn-outline btn-primary" {{ sylius_test_html_attribute('show-order-in-account') }}>{{ 'sylius.ui.view_order'|trans }}</a>
+            {% else %}
+                <a href="{{ path('sylius_shop_order_show', {'tokenValue': order.tokenValue}) }}" id="payment-method-page" class="btn btn-outline btn-primary" {{ sylius_test_html_attribute('payment-method-page') }}>{{ 'sylius.ui.change_payment_method'|trans }}</a>
+                <a href="{{ path('sylius_shop_register_after_checkout', {'tokenValue': order.tokenValue}) }}" class="btn btn-outline btn-accent" {{ sylius_test_html_attribute('create-an-account') }}>
+                    <i class="signup icon"></i>
+                    {{ 'sylius.ui.create_an_account'|trans }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

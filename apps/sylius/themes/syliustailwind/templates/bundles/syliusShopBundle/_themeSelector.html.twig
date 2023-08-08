@@ -1,0 +1,35 @@
+<script>
+const selectTheme = document.getElementById('theme-select');
+
+selectTheme.addEventListener('change', (e) => {
+    const theme = e.target.value;
+    localStorage.setItem('theme', theme);
+    document.querySelector('html').setAttribute('data-theme', localStorage.getItem('theme'));
+});
+
+if (localStorage.getItem('theme') !== null) {
+    document.querySelector('html').setAttribute('data-theme', localStorage.getItem('theme'));
+}
+</script>
+
+<div class="fixed float-right p-4 bg-primary w-full">
+    <select class="select select-bordered w-full max-w-xs" name="themes" id="theme-select">
+        <option disabled selected>Choisir un thème :</option>
+        <option value="light">light</option>
+        <option value="cupcake">cupcake</option>
+        <option value="bumblebee">bumblebee</option>
+        <option value="emerald">emerald</option>
+        <option value="corporate">corporate</option>
+        <option value="retro">retro</option>
+        <option value="cyberpunk">cyberpunk</option>
+        <option value="valentine">valentine</option>
+        <option value="garden">garden</option>
+        <option value="pastel">pastel</option>
+        <option value="fantasy">fantasy</option>
+        <option value="cmyk">cmyk</option>
+        <option value="autumn">autumn</option>
+        <option value="acid">acid</option>
+        <option value="lemonade">lemonade</option>
+        <option value="winter">winter</option>
+    </select>
+</div>

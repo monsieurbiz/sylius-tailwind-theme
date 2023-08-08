@@ -1,0 +1,39 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./components/_address.css";
+@import "./components/_alert.css";
+@import "./components/_card.css";
+@import "./components/_carousel.css";
+@import "./components/_checkbox.css";
+@import "./components/_checkout.css";
+@import "./components/_comment.css";
+@import "./components/_forms.css";
+@import "./components/_footer.css";
+@import "./components/_hero.css";
+@import "./components/_highlight.css";
+@import "./components/_topbar.css";
+@import "./components/_navbar.css";
+@import "./components/_newsletter.css";
+@import "./components/_product.css";
+@import "./components/_steps.css";
+@import "./components/_table.css";
+@import "./components/_tab.css";
+
+
+@import "./utilities/_heading.css";
+@import "./utilities/_text.css";
+@import "./utilities/_label.css";
+
+.sylius-grid-table-wrapper {
+    @apply overflow-x-scroll;
+}
+
+li { 
+    display: list-item; 
+}
+
+input {
+    @apply leading-none;
+}

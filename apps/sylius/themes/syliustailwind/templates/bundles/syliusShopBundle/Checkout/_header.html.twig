@@ -1,0 +1,20 @@
+<div class="ui basic segment">
+    <div class="flex gap-4 lg:gap-0 justify-between my-4 lg:my-8">
+        {% if use_webpack %}
+            <a href="{{ path('sylius_shop_homepage') }}">
+                <img src="{{ asset('build/shop/images/logo.png', 'shop') }}" class="w-36"/>
+            </a>
+        {% else %}
+            <a href="{{ path('sylius_shop_homepage') }}">
+                <img src="{{ asset('assets/shop/img/logo.png') }}" />
+            </a>
+        {% endif %}
+        <div class="right menu">
+            {% if order.customer.id|default(null) is not null %}
+                <div class="item" id="purchaser-email" {{ sylius_test_html_attribute('purchaser-name-or-email') }}>{{ 'sylius.ui.checking_out_as'|trans }} {{ app.user is null ? order.customer.email : order.customer.fullName|default(order.customer.email) }}.</div>
+            {% else %}
+                <a href="{{ path('sylius_shop_login') }}" class="item">{{ 'sylius.ui.sign_in'|trans }}</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

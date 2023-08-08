@@ -1,0 +1,24 @@
+@layer components {
+
+/*
+Comment
+-----------------------------------------------------------------------------
+*/
+
+.comment {
+    @apply w-full p-6 border border-gray-200 rounded-md text-left mb-4;
+}
+
+.comment .author {
+    @apply font-bold text-gray-800 cursor-pointer mr-4;
+}
+
+.comment .content .metadata {
+    @apply inline-flex text-sm text-gray-300;
+}
+
+.comment .text {
+    @apply text-gray-800 text-sm leading-5 font-normal my-2 break-words; 
+}
+
+}

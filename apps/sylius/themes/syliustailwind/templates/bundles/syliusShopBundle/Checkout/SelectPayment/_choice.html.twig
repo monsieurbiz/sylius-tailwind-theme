@@ -1,0 +1,15 @@
+<div class="item flex w-full" {{ sylius_test_html_attribute('payment-item') }}>
+    <div class="field self-center">
+        <div class="ui radio checkbox" {{ sylius_test_html_attribute('payment-method-checkbox') }}>
+            {{ form_widget(form, sylius_test_form_attribute('payment-method-select')) }}
+        </div>
+    </div>
+    <div class="content flex flex-col flex-auto p-1 gap-2">
+        <a class="text-lg font-bold hover:text-primary">{{ form_label(form, null, {'label_attr': {'data-test-payment-method-label': ''}}) }}</a>
+        {% if method.description is not null %}
+            <div class="description">
+                <p>{{ method.description }}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@layer components {
+/*
+Card
+-----------------------------------------------------------------------------
+*/
+
+.card {
+    @apply shadow-xl bg-base-100 w-full;
+}
+
+.card > figure > img {
+    @apply w-full object-contain;
+}
+
+.latest-product .card {
+    @apply md:w-2/4;
+}
+
+.card-body {
+    --padding-card: 1rem;
+    @apply justify-between gap-0 h-4/6;
+}
+
+}

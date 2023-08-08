@@ -1,0 +1,26 @@
+<div class="divider mt-0"></div>
+
+<div class="text-sm breadcrumbs">
+    <ul>
+        <li><a href="{{ path('sylius_shop_homepage') }}" class="section">{{ 'sylius.ui.home'|trans }}</a></li>
+        {% if product.mainTaxon is not null %}
+            {% set taxon = product.mainTaxon %}
+            {% set ancestors = taxon.ancestors|reverse %}
+
+            {% for ancestor in ancestors %}
+                {% if ancestor.isRoot()  or not ancestor.enabled %}
+                    <li class="section">{{ ancestor.name }}</li>
+                {% else %}
+                    <li><a href="{{ path('sylius_shop_product_index', {'slug': ancestor.slug, '_locale': ancestor.translation.locale}) }}" class="section">{{ ancestor.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if taxon.enabled %}
+                <li><a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="section">{{ taxon.name }}</a></li>
+            {% else %}
+                <li class="section">{{ taxon.name }}</li>
+            {% endif %}
+        {% endif %}
+        <li class="active section text-accent-focus">{{ product.name }}</li>
+    </ul>
+</div>

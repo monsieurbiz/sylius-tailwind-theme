@@ -1,0 +1,45 @@
+@layer components {
+
+/*
+Steps
+-----------------------------------------------------------------------------
+*/
+
+.steps {
+    @apply bg-base-200 py-8 justify-items-center md:justify-items-stretch;
+}
+
+/*
+Step
+-----------------------------------------------------------------------------
+*/
+
+.step {
+    @apply flex flex-col items-center gap-4;
+}
+
+.step.active::after {
+    @apply bg-primary;
+}
+
+.step.active::before {
+    @apply bg-primary;
+}
+
+.step.completed::after {
+    @apply bg-primary;
+}
+
+.step.completed::before {
+    @apply bg-primary;
+}
+
+.step.active .step-title {
+    @apply text-primary font-bold;
+}
+
+.step-description {
+    @apply text-sm text-center w-40;
+}
+
+}

@@ -1,0 +1,5 @@
+@layer components {
+    .navbar {
+        border-top: 1px solid lightgrey;
+    }
+}

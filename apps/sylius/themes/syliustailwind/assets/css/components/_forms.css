@@ -1,0 +1,50 @@
+@layer components {
+
+/*
+Forms
+-----------------------------------------------------------------------------
+*/
+
+
+/*
+Field
+-----------------------------------------------------------------------------
+*/
+.form-field {
+    @apply flex flex-col;
+}
+
+/*
+Input
+-----------------------------------------------------------------------------
+*/
+.form-input {
+    @apply input input-bordered input-primary w-full;
+}
+
+.form-input.error {
+    outline: 2px solid hsl(var(--er));
+}
+
+/*
+Label
+-----------------------------------------------------------------------------
+*/
+.form-label {
+    @apply font-bold mb-2;
+}
+
+.form-checkbox {
+    @apply flex gap-4;
+}
+
+/*
+Required
+-----------------------------------------------------------------------------
+*/
+.form-label.required:after,
+.form-select.required:after {
+        @apply content-['*'] text-red-500;
+}
+
+}

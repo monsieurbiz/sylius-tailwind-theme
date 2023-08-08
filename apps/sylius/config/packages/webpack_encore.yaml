@@ -3,5 +3,10 @@ webpack_encore:
     builds:
         admin: '%kernel.project_dir%/public/build/admin'
         shop: '%kernel.project_dir%/public/build/shop'
-        app.admin: '%kernel.project_dir%/public/build/app/admin'
-        app.shop: '%kernel.project_dir%/public/build/app/shop'
+        syliustailwind-theme: '%kernel.project_dir%/public/build/themes/syliustailwind'
+
+framework:
+    assets:
+        packages:
+            syliustailwind-theme:
+                json_manifest_path: '%kernel.project_dir%/public/build/themes/syliustailwind/manifest.json'

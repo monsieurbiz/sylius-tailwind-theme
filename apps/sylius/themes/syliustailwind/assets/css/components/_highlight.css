@@ -1,0 +1,15 @@
+@layer components {
+/*
+Highlight
+-----------------------------------------------------------------------------
+*/
+
+.content-highlighted {
+    @apply bg-white shadow-md rounded-md p-4 mb-12 border border-gray-200;
+}
+
+.content-highlighted-gray {
+    @apply bg-gray-100 shadow-md rounded-md p-8 border border-gray-200;
+}
+
+}

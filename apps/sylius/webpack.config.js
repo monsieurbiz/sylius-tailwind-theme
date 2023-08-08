@@ -4,6 +4,7 @@ const Encore = require('@symfony/webpack-encore');
 const syliusBundles = path.resolve(__dirname, 'vendor/sylius/sylius/src/Sylius/Bundle/');
 const uiBundleScripts = path.resolve(syliusBundles, 'UiBundle/Resources/private/js/');
 const uiBundleResources = path.resolve(syliusBundles, 'UiBundle/Resources/private/');
+const mainShopAssets = path.resolve(__dirname, 'assets/shop/');
 
 // Shop config
 Encore
@@ -46,44 +47,20 @@ adminConfig.name = 'admin';
 
 Encore.reset();
 
-// App shop config
-Encore
-    .setOutputPath('public/build/app/shop')
-    .setPublicPath('/build/app/shop')
-    .addEntry('app-shop-entry', './assets/shop/entry.js')
-    .disableSingleRuntimeChunk()
-    .cleanupOutputBeforeBuild()
-    .enableSourceMaps(!Encore.isProduction())
-    .enableVersioning(Encore.isProduction())
-    .enableSassLoader();
+const themeAlias = {
+  'sylius/ui': uiBundleScripts,
+  'sylius/ui-resources': uiBundleResources,
+  'sylius/bundle': syliusBundles,
+  '@mainShopAssets': mainShopAssets,
+};
 
-const appShopConfig = Encore.getWebpackConfig();
+// Themes config
+const syliustailwindThemeConfig = require('./themes/syliustailwind/webpack.config');
 
-appShopConfig.resolve.alias['sylius/ui'] = uiBundleScripts;
-appShopConfig.resolve.alias['sylius/ui-resources'] = uiBundleResources;
-appShopConfig.resolve.alias['sylius/bundle'] = syliusBundles;
-appShopConfig.externals = Object.assign({}, appShopConfig.externals, { window: 'window', document: 'document' });
-appShopConfig.name = 'app.shop';
+syliustailwindThemeConfig.resolve.alias = themeAlias;
 
-Encore.reset();
-
-// App admin config
-Encore
-    .setOutputPath('public/build/app/admin')
-    .setPublicPath('/build/app/admin')
-    .addEntry('app-admin-entry', './assets/admin/entry.js')
-    .disableSingleRuntimeChunk()
-    .cleanupOutputBeforeBuild()
-    .enableSourceMaps(!Encore.isProduction())
-    .enableVersioning(Encore.isProduction())
-    .enableSassLoader();
-
-const appAdminConfig = Encore.getWebpackConfig();
-
-appAdminConfig.resolve.alias['sylius/ui'] = uiBundleScripts;
-appAdminConfig.resolve.alias['sylius/ui-resources'] = uiBundleResources;
-appAdminConfig.resolve.alias['sylius/bundle'] = syliusBundles;
-appAdminConfig.externals = Object.assign({}, appAdminConfig.externals, { window: 'window', document: 'document' });
-appAdminConfig.name = 'app.admin';
-
-module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];
+module.exports = [
+  shopConfig,
+  adminConfig,
+  syliustailwindThemeConfig,
+];

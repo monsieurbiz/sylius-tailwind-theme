@@ -1,0 +1,17 @@
+@layer components {
+
+/*
+Footer
+-----------------------------------------------------------------------------
+*/
+
+.footer {
+    @apply pb-10 pt-96 lg:pt-32 px-14 lg:px-72 text-base-content bg-primary;
+}
+
+.pre-footer {
+    min-height: 30rem;
+    @apply absolute -top-2 bg-secondary rounded-md flex flex-col justify-between lg:justify-evenly lg:flex-row items-center py-8 lg:py-12 w-9/12 lg:min-h-0;
+}
+
+}

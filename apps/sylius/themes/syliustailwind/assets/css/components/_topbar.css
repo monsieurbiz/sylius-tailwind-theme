@@ -1,0 +1,5 @@
+@layer components {
+.topbar {
+    @apply flex flex-col md:flex-row justify-between items-start lg:items-center gap-8 bg-primary py-4 px-4 lg:px-72;
+}
+}

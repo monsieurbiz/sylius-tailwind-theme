@@ -1,0 +1,73 @@
+@layer components {
+
+/*
+Checkbox
+-----------------------------------------------------------------------------
+*/
+
+.radio {
+    border: none;
+}
+
+.checkbox input[type="radio"] {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0 !important;
+    outline: none;
+    z-index: 3;
+    width: 17px;
+    height: 17px;
+}
+
+.checkbox input.hidden + label {
+    cursor: pointer;
+}
+
+.radio.checkbox label:before {
+    content: '';
+    position: relative;
+    display: block;
+    transform: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 500rem;
+    top: 1px;
+    left: 0px;
+    transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    border: 1px solid #D4D4D5;
+}
+
+
+.radio.checkbox label:after {
+    position: relative;
+    display: block;
+    top: -15px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    border-radius: 500rem;
+    transform: scale(0.46666667);
+}
+
+.radio.checkbox input:checked ~ label:after {
+    @apply bg-primary;
+}
+
+
+
+
+.checkbox input:checked ~ label:after {
+    opacity: 1;
+    color: rgba(0, 0, 0, 0.95);
+}
+
+.radio.checkbox label:after {
+    border: none;
+    content: '' !important;
+    line-height: 15px;
+}
+
+
+}

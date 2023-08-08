@@ -1,0 +1,40 @@
+
+<div class="navbar justify-center bg-base-100">
+    {# For now I haven't find a way to add a burger menu so I did a verticale menu, I might come back on this later #}
+    {# <div tabindex="0" class="navbar-start btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+    </div> #}
+
+    {% macro item(taxon) %}
+        {% import _self as macros %}
+
+        {% if taxon.enabledChildren|length > 0 %}
+            <li tabindex="0" class="lg:flex" {{ sylius_test_html_attribute('menu-item') }}>
+                <span>
+                    {{ taxon.name }}
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M6 9l6 6l6 -6"></path>
+                    </svg>
+                </span>
+                <ul class="z-50">
+                    {% for childTaxon in taxon.enabledChildren %}
+                        {{ macros.item(childTaxon) }}
+                    {% endfor %}
+                </ul>
+            </li>
+        {% else %}
+            <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}" class="bg-base-100 p-2" {{ sylius_test_html_attribute('menu-item') }}>{{ taxon.name }}</a>
+        {% endif %}
+    {% endmacro %}
+
+    {% import _self as macros %}
+
+    {% if taxons|length > 0 %}
+        <ul tabindex="0" class="menu menu-vertical lg:menu-horizontal" {{ sylius_test_html_attribute('menu') }}>
+            {% for taxon in taxons %}
+                <li>{{ macros.item(taxon) }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>

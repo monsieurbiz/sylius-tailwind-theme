@@ -1,0 +1,47 @@
+@layer components {
+
+/*
+Carousel
+-----------------------------------------------------------------------------
+*/
+
+.slick-arrow {
+    position: absolute;
+    padding-inline: 0;
+}
+
+.carousel-wrapper {
+    @apply relative;
+}
+
+.carousel-nav .carousel-left,
+.carousel-nav .carousel-right {
+    @apply relative;
+}
+
+@screen lg {
+    .carousel-nav .carousel-left,
+    .carousel-nav .carousel-right {
+        @apply absolute top-1/2;
+    }
+}
+
+.carousel {
+    margin: 0 -1em;
+}
+
+.carousel-item {
+    padding: 5px .5em;
+    box-sizing: inherit;
+}
+
+.carousel-item .card {
+    height: 25rem;
+}
+@screen lg {
+    .carousel-item .card {
+        height: 40rem;
+    }
+}
+
+}
