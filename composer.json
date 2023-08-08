@@ -2,6 +2,7 @@
     "name": "monsieurbiz/sylius-tailwind-theme",
     "description": "Sylius Tailwind theme by Monsieur Biz",
     "license": "MIT",
+    "type": "sylius-theme",
     "authors": [
         {
             "name": "Monsieur Biz",
