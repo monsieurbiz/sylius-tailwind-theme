@@ -16,7 +16,7 @@ Encore
   .setOutputPath('public/build/themes/sylius-tailwind')
   .setPublicPath('/build/themes/sylius-tailwind')
 
-  .addEntry('sylius-tailwind-theme-entry', './themes/sylius-tailwind-theme/assets/entry.js')
+  .addEntry('sylius-tailwind-theme-entry', __dirname + '/assets/entry.js')
 
   .disableSingleRuntimeChunk()
   .cleanupOutputBeforeBuild()
