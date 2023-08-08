@@ -1,2 +1,0 @@
-* * * * * sh php bin/console sylius:remove-expired-carts
-* * * * * sh php bin/console sylius:sylius:cancel-unpaid-orders

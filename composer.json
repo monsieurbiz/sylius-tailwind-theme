@@ -1,0 +1,19 @@
+{
+    "name": "monsieurbiz/sylius-tailwind-theme",
+    "description": "Sylius Tailwind theme by Monsieur Biz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Monsieur Biz",
+            "email": "hello@monsieurbiz.com"
+        }
+    ],
+    "extra": {
+        "sylius-theme": {
+            "title": "Sylius Tailwind by Monsieur Biz"
+        },
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
