@@ -4,18 +4,12 @@
 
 1. You may need our Theme Companion plugin: https://github.com/monsieurbiz/SyliusThemeCompanionPlugin#readme
 2. Require the theme: `composer require monsieurbiz/sylius-tailwind-theme`
-3. Add Yarn dependencies:
+3. Install Yarn dependencies: (the `package.json` is updated by flex)
    ```bash
-   yarn add daisyui@^2.50.0
-   yarn add postcss-loader@^7.0.0 --dev
+   yarn install --force
    ```
-4. Update your `webpack.config.js`:
+4. Update your `webpack.config.js` to enable the compilation of your theme:
    ```diff
-     appAdminConfig.name = 'app.admin';
-     
-   + // Themes config
-   + const syliusTailwindThemeConfig = require('./vendor/monsieurbiz/sylius-tailwind-theme/webpack.config');
-     
    - module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];
    + module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig, syliusTailwindThemeConfig];
    ```

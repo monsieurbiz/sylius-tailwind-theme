@@ -1,0 +1,16 @@
+{
+    "name": "@monsieurbiz/sylius-tailwind-theme",
+    "description": "Sylius Tailwind theme by Monsieur Biz",
+    "license": "MIT",
+    "version": "1.0.0",
+    "peerDependencies": {
+        "daisyui": "^2.50.0",
+        "postcss-loader": "^7.0.0"
+    },
+    "dependencies": {
+        "daisyui": "^2.50.0"
+    },
+    "devDependencies": {
+        "postcss-loader": "^7.0.0"
+    }
+}

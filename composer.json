@@ -3,6 +3,13 @@
     "description": "Sylius Tailwind theme by Monsieur Biz",
     "license": "MIT",
     "type": "sylius-theme",
+    "keywords": [
+        "monsieurbiz",
+        "symfony-ux",
+        "sylius",
+        "sylius-theme",
+        "tailwind"
+    ],
     "authors": [
         {
             "name": "Monsieur Biz",
