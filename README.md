@@ -1,4 +1,8 @@
-# sylius tailwind theme
+# Sylius Tailwind Theme
+
+## Requirements
+
+You need to use [our own recipes](https://github.com/monsieurbiz/symfony-recipes#readme).
 
 ## Install
 
@@ -20,3 +24,4 @@ Please follow the instructions of the [Custom Theme](https://github.com/monsieur
 ## License
 
 Please see LICENSE.txt.
+
