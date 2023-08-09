@@ -19,7 +19,9 @@
    - module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];
    + module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig, syliusTailwindThemeConfig];
    ```
+## Add your custom theme into your Sylius project
 
+Please follow the instructions of the [Custom Theme](https://github.com/monsieurbiz/sylius-setup/tree/master/dist/sylius/themes/custom#readme) from our Sylius Setup project.
 
 ## License
 
