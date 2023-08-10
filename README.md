@@ -12,11 +12,6 @@ You need to use [our own recipes](https://github.com/monsieurbiz/symfony-recipes
    ```bash
    yarn install --force
    ```
-4. Update your `webpack.config.js` to enable the compilation of your theme:
-   ```diff
-   - module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig];
-   + module.exports = [shopConfig, adminConfig, appShopConfig, appAdminConfig, syliusTailwindThemeConfig];
-   ```
 ## Add your custom theme into your Sylius project
 
 Please follow the instructions of the [Custom Theme](https://github.com/monsieurbiz/sylius-setup/tree/master/dist/sylius/themes/custom#readme) from our Sylius Setup project.
@@ -24,4 +19,3 @@ Please follow the instructions of the [Custom Theme](https://github.com/monsieur
 ## License
 
 Please see LICENSE.txt.
-
